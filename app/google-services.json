@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "627299283929",
+    "project_id": "playermanagement-32dcc",
+    "storage_bucket": "playermanagement-32dcc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:627299283929:android:53ef5b6837a960d35f1fc8",
+        "android_client_info": {
+          "package_name": "com.example.gymproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "627299283929-707i6k5q2c9lfv8165oa1ftp6k0nr35e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAgcp6EHaUV2Ajrr8mZWbEwaVcHBb32eY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "627299283929-707i6k5q2c9lfv8165oa1ftp6k0nr35e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
