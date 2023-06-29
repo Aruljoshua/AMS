@@ -2,7 +2,9 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/amaranth</item>
+        <item>@font/arbutus</item>
         <item>@font/audiowide</item>
+        <item>@font/chonburi</item>
         <item>@font/fraunces_thin</item>
     </array>
 </resources>

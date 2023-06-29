@@ -5,7 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ClickForRpeRequest">
+    tools:context=".ClickForRpeRequest"
+    android:background="@drawable/back">
 
   <!--  <TextView-->
 <!--      android:id="@+id/rpeRequestNotification"-->
@@ -25,26 +26,42 @@
       android:id="@+id/buttonLogout"
       android:layout_width="107dp"
       android:layout_height="53dp"
-      android:layout_marginStart="152dp"
-      android:layout_marginTop="24dp"
-      android:text="LOGOUT"
       android:backgroundTint="@color/lavender"
+      android:text="LOGOUT"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.042" />
 
   <com.google.android.material.floatingactionbutton.FloatingActionButton
       android:id="@+id/floatingActionButton"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginEnd="176dp"
-      android:clickable="true"
       android:backgroundTint="@color/lavender"
-      app:tint="@color/white"
+      android:clickable="true"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/buttonLogout"
-      app:layout_constraintVertical_bias="0.76"
+      app:layout_constraintVertical_bias="0.763"
       app:srcCompat="@android:drawable/stat_notify_more"
+      app:tint="@color/white"
       tools:ignore="MissingConstraints" />
+
+  <TextView
+      android:id="@+id/rpeRequestNotification"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="232dp"
+      android:fontFamily="@font/amaranth"
+      android:text="TextView"
+      android:textSize="16sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.498"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/buttonLogout"
+      app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

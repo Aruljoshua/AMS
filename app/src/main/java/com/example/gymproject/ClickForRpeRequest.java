@@ -2,7 +2,6 @@ package com.example.gymproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -29,16 +28,15 @@ public class ClickForRpeRequest extends AppCompatActivity {
 
     private FloatingActionButton fabNext;
 
-//    FirebaseDatabase database = FirebaseDatabase.getInstance();
-//    DatabaseReference rpeRequestsRef = database.getReference("rpe_requests"); // Replace with your Firebase database reference path
-//
-//    // Get the current date
-//    Calendar calendar = Calendar.getInstance();
-//    Date currentDate = calendar.getTime();
-//    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-//    String formattedDate = dateFormat.format(currentDate);
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference rpeRequestsRef = database.getReference("rpe_requests"); // Replace with your Firebase database reference path
 
-    @SuppressLint("MissingInflatedId")
+    // Get the current date
+    Calendar calendar = Calendar.getInstance();
+    Date currentDate = calendar.getTime();
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    String formattedDate = dateFormat.format(currentDate);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,29 +60,27 @@ public class ClickForRpeRequest extends AppCompatActivity {
             }
         });
 
-//        TextView textView = findViewById(R.id.rpeRequestNotification);
+        textViewNotification = findViewById(R.id.rpeRequestNotification);
+        fabNext = findViewById(R.id.floatingActionButton);
 
         // Check if there is an RPE request
-//        boolean hasRpeRequest = checkRpeRequest();
-//
-//        // Display appropriate message based on the request status
-//        if (hasRpeRequest) {
-//            textViewNotification.setText("You have an RPE request.");
-//
-//            textView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    // Perform action when the TextView is clicked
-//                    Intent intent = new Intent(ClickForRpeRequest.this, ReportTypes.class);
-//                    startActivity(intent);
-//                }
-//            });
-//        } else {
-//            textViewNotification.setText("You have no requests.");
-//        }
+        boolean hasRpeRequest = checkRpeRequest();
 
+        // Display appropriate message based on the request status
+        if (hasRpeRequest) {
+            textViewNotification.setText("You have an RPE request.");
 
-        fabNext = findViewById(R.id.floatingActionButton);
+            textViewNotification.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Perform action when the TextView is clicked
+                    Intent intent = new Intent(ClickForRpeRequest.this, ReportTypes.class);
+                    startActivity(intent);
+                }
+            });
+        } else {
+            textViewNotification.setText("You have no requests.");
+        }
 
         fabNext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,17 +90,18 @@ public class ClickForRpeRequest extends AppCompatActivity {
             }
         });
     }
-    private boolean checkRpeRequest() {
-        // Implement your logic to check for RPE requests
-        // Return true if there is an RPE request, false otherwise
-        return false;
-    }
-    public void onTextViewClick(View view) {
-        // Handle the click event for the text view
-        Toast.makeText(this, "Text View Clicked", Toast.LENGTH_SHORT).show();
 
-        // Navigate to the next activity
-//        Intent intent = new Intent(ClickForRpeRequest.this, NextActivity.class);
-//        startActivity(intent);
+    private boolean checkRpeRequest() {
+        // Retrieve the last updated date from your database or any other data source
+        String lastUpdatedDate = ""; // Replace with your code to retrieve the last updated date
+
+        // Compare the last updated date with the current date
+        if (lastUpdatedDate.equals(formattedDate)) {
+            // The request has been updated today, return false
+            return false;
+        } else {
+            // The request has not been updated today, return true
+            return true;
+        }
     }
 }
